@@ -9,6 +9,8 @@
 <body>
 
  <form action="ServletLogin" method="post">
+ 
+     <input type="hidden" value="<%= request.getParameter("url") %>" name="url">
       
       <label>Login</label>
       <br/>
