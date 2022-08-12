@@ -4,9 +4,26 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title>Login</title>
 </head>
 <body>
 
+ <form action="ServletLogin" method="post">
+      
+      <label>Login</label>
+      <br/>
+      <input type="text" name="login" id="login">
+      <br/>
+      
+      <label>Senha</label>
+      <br/>
+      <input type="password" name="senha" id="senha">
+      <br/>
+      <br/>
+      
+      <input type="submit" value="Logar">
+ </form>
+ <br/>
+ <h3>${msg}</h3>
 </body>
 </html>
