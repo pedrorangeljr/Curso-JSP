@@ -16,6 +16,10 @@ CREATE TABLE public.model_login
   CONSTRAINT login_unique UNIQUE (login)
 )
 
+INSERT INTO public.model_login(
+            login, senha)
+    VALUES ('admin', 'admin');
+
 WITH (
   OIDS=FALSE
 );
