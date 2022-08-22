@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -40,11 +40,12 @@
 									<!-- Page-body start -->
 									<div class="page-body">
 										<div class="row">
+
 											<!-- task, page, download counter  start -->
 
 											<!-- task, page, download counter  end -->
-
-
+  
+                                            <h1>Cadastro de Usuário</h1>
 											<!--  sale analytics start -->
 
 											<!--  sale analytics end -->
@@ -112,7 +113,7 @@
 	<!-- Warning Section Ends -->
 
 	<!-- Required Jquery -->
-	<jsp:include page="scripts.jsp"></jsp:include>
+	 <jsp:include page="scripts.jsp"></jsp:include>
 </body>
 
 </html>
