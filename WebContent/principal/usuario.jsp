@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -40,22 +40,55 @@
 									<!-- Page-body start -->
 									<div class="page-body">
 										<div class="row">
+											<div class="col-sm-12">
+												<!-- Basic Form Inputs card start -->
+												<div class="card">
+													<div class="card-header">
+														<h4>Cadastro de Usuário</h4>
 
-											<!-- task, page, download counter  start -->
+													</div>
+													<div class="card-block">
 
-											<!-- task, page, download counter  end -->
-  
-                                            <h1>Cadastro de Usuário</h1>
-											<!--  sale analytics start -->
+														<form>
+															<div class="form-group row">
+																<label class="col-sm-2 col-form-label">Id</label>
+																<div class="col-sm-8">
+																	<input type="text" class="form-control"
+																		readonly="readonly">
+																</div>
+															</div>
 
-											<!--  sale analytics end -->
+															<div class="form-group row">
+																<label class="col-sm-2 col-form-label">Nome</label>
+																<div class="col-sm-8">
+																	<input type="text" class="form-control" name="nome">
+																</div>
+															</div>
 
-											<!--  project and team member start -->
+															<div class="form-group row">
+																<label class="col-sm-2 col-form-label">E-mail</label>
+																<div class="col-sm-8">
+																	<input type="email" class="form-control" name="email">
+																</div>
+															</div>
 
-
-											<!--  project and team member end -->
-
+															<div class="form-group row">
+																<label class="col-sm-2 col-form-label">Senha</label>
+																<div class="col-sm-8">
+																	<input type="password" class="form-control"
+																		name="password">
+																</div>
+															</div>
+                                                           
+                                                           <button class="btn btn-primary waves-effect waves-light">Cadastrar</button>
+                                                          
+														</form>
+													</div>
+												</div>
+											</div>
 										</div>
+
+
 									</div>
 									<!-- Page-body end -->
 								</div>
@@ -113,7 +146,7 @@
 	<!-- Warning Section Ends -->
 
 	<!-- Required Jquery -->
-	 <jsp:include page="scripts.jsp"></jsp:include>
+	<jsp:include page="scripts.jsp"></jsp:include>
 </body>
 
 </html>
