@@ -49,26 +49,33 @@
 													</div>
 													<div class="card-block">
 
-														<form>
+														<form action="<%= request.getContextPath() %>/ServletUsuarioController" method="post">
 															<div class="form-group row">
 																<label class="col-sm-2 col-form-label">Id</label>
 																<div class="col-sm-8">
 																	<input type="text" class="form-control"
-																		readonly="readonly">
+																		readonly="readonly" id="nome" name="id">
 																</div>
 															</div>
 
 															<div class="form-group row">
 																<label class="col-sm-2 col-form-label">Nome</label>
 																<div class="col-sm-8">
-																	<input type="text" class="form-control" name="nome">
+																	<input type="text" class="form-control" name="nome" id="nome">
 																</div>
 															</div>
 
 															<div class="form-group row">
 																<label class="col-sm-2 col-form-label">E-mail</label>
 																<div class="col-sm-8">
-																	<input type="email" class="form-control" name="email">
+																	<input type="email" class="form-control" name="email" id="email" required="required">
+																</div>
+															</div>
+															
+																<div class="form-group row">
+																<label class="col-sm-2 col-form-label">Login</label>
+																<div class="col-sm-8">
+																	<input type="text" class="form-control" name="login" id="login" autocomplete="off">
 																</div>
 															</div>
 
@@ -76,11 +83,13 @@
 																<label class="col-sm-2 col-form-label">Senha</label>
 																<div class="col-sm-8">
 																	<input type="password" class="form-control"
-																		name="password">
+																		name="senha" id="senha" autocomplete="off">
 																</div>
 															</div>
                                                            
-                                                           <button class="btn btn-primary waves-effect waves-light">Cadastrar</button>
+                                                           <button class="btn btn-primary waves-effect waves-light">Novo</button>
+                                                           <button class="btn btn-success waves-effect waves-light">Cadastrar</button>
+                                                           <button type="button" class="btn btn-info">Excluir</button>
                                                           
 														</form>
 													</div>
