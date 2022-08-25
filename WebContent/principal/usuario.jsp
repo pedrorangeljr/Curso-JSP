@@ -54,28 +54,28 @@
 																<label class="col-sm-2 col-form-label">Id</label>
 																<div class="col-sm-8">
 																	<input type="text" class="form-control"
-																		readonly="readonly" id="nome" name="id">
+																		readonly="readonly" id="nome" name="id" value="${modelLogin.id }">
 																</div>
 															</div>
 
 															<div class="form-group row">
 																<label class="col-sm-2 col-form-label">Nome</label>
 																<div class="col-sm-8">
-																	<input type="text" class="form-control" name="nome" id="nome">
+																	<input type="text" class="form-control" name="nome" id="nome" value="${modelLogin.nome }">
 																</div>
 															</div>
 
 															<div class="form-group row">
 																<label class="col-sm-2 col-form-label">E-mail</label>
 																<div class="col-sm-8">
-																	<input type="email" class="form-control" name="email" id="email" required="required">
+																	<input type="email" class="form-control" name="email" id="email" required="required" value="${modelLogin.email }">
 																</div>
 															</div>
 															
 																<div class="form-group row">
 																<label class="col-sm-2 col-form-label">Login</label>
 																<div class="col-sm-8">
-																	<input type="text" class="form-control" name="login" id="login" autocomplete="off">
+																	<input type="text" class="form-control" name="login" id="login" autocomplete="off" value="${modelLogin.login }">
 																</div>
 															</div>
 
@@ -83,7 +83,7 @@
 																<label class="col-sm-2 col-form-label">Senha</label>
 																<div class="col-sm-8">
 																	<input type="password" class="form-control"
-																		name="senha" id="senha" autocomplete="off">
+																		name="senha" id="senha" autocomplete="off" value="${modelLogin.senha }">
 																</div>
 															</div>
                                                            
