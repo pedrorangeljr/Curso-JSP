@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import dao.DaoUsuarioRepository;
 import model.ModelLogin;
 
 
@@ -16,6 +17,7 @@ import model.ModelLogin;
 public class ServletUsuarioController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
+	private DaoUsuarioRepository daoUsuarioRepository = new DaoUsuarioRepository();
     
     public ServletUsuarioController() {
         super();
@@ -46,6 +48,8 @@ public class ServletUsuarioController extends HttpServlet {
 			modelLogin.setEmail(email);
 			modelLogin.setLogin(login);
 			modelLogin.setSenha(senha);
+			
+			daoUsuarioRepository.gravarUsuario(modelLogin);
 			
 			RequestDispatcher redirecionar = request.getRequestDispatcher("principal/usuario.jsp");
 			request.setAttribute("modelLogin", modelLogin);
