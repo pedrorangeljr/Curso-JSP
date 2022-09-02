@@ -49,7 +49,7 @@ public class ServletUsuarioController extends HttpServlet {
 			modelLogin.setLogin(login);
 			modelLogin.setSenha(senha);
 			
-			daoUsuarioRepository.gravarUsuario(modelLogin);
+			modelLogin = daoUsuarioRepository.gravarUsuario(modelLogin);
 			
 			RequestDispatcher redirecionar = request.getRequestDispatcher("principal/usuario.jsp");
 			request.setAttribute("modelLogin", modelLogin);
