@@ -22,16 +22,34 @@ public class DaoUsuarioRepository {
 
 		try {
 
-			String sql = "insert into model_login(login,senha,nome,email)values(?,?,?,?)";
-			PreparedStatement insert = connection.prepareStatement(sql);
+			if (objeto.isNovo()) { // grava um novo.
 
-			insert.setString(1, objeto.getLogin());
-			insert.setString(2, objeto.getSenha());
-			insert.setString(3, objeto.getNome());
-			insert.setString(4, objeto.getEmail());
-			insert.execute();
+				String sql = "insert into model_login(login,senha,nome,email)values(?,?,?,?)";
+				PreparedStatement insert = connection.prepareStatement(sql);
 
-			connection.commit();
+				insert.setString(1, objeto.getLogin());
+				insert.setString(2, objeto.getSenha());
+				insert.setString(3, objeto.getNome());
+				insert.setString(4, objeto.getEmail());
+				insert.execute();
+
+				connection.commit();
+
+			} else {
+
+				String sql = "update model_login set login = ?, senha = ?, nome = ?, email = ? where id = "
+						+ objeto.getId() + "";
+				PreparedStatement update = connection.prepareStatement(sql);
+
+				update.setString(1, objeto.getLogin());
+				update.setString(2, objeto.getSenha());
+				update.setString(3, objeto.getNome());
+				update.setString(4, objeto.getEmail());
+
+				update.executeUpdate();
+
+				connection.commit();
+			}
 
 		} catch (Exception e) {
 
