@@ -49,7 +49,7 @@
 													</div>
 													<div class="card-block">
 
-														<form action="<%= request.getContextPath() %>/ServletUsuarioController" method="post">
+														<form action="<%= request.getContextPath() %>/ServletUsuarioController" method="post" id="formUser">
 															<div class="form-group row">
 																<label class="col-sm-2 col-form-label">Id</label>
 																<div class="col-sm-8">
@@ -87,7 +87,7 @@
 																</div>
 															</div>
                                                            
-                                                           <button class="btn btn-primary waves-effect waves-light">Novo</button>
+                                                           <button class="btn btn-primary waves-effect waves-light" onclick="limparForm();">Novo</button>
                                                            <button class="btn btn-success waves-effect waves-light">Cadastrar</button>
                                                            <button type="button" class="btn btn-info">Excluir</button>
                                                           
@@ -156,6 +156,21 @@
 
 	<!-- Required Jquery -->
 	<jsp:include page="scripts.jsp"></jsp:include>
+	
+	<script type="text/javascript">
+	
+      function limparForm() {
+    	  
+    	  var elementos = document.getElementById("formUser").elements;
+    	  
+    	  for(p = 0; p < elementos.length; p++) {
+    		  
+    		  elementos[p].value ='';
+    	  }
+      }
+	
+	
+	</script>
 </body>
 
 </html>
