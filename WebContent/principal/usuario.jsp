@@ -50,6 +50,9 @@
 													<div class="card-block">
 
 														<form action="<%= request.getContextPath() %>/ServletUsuarioController" method="post" id="formUser">
+														  
+														  <input type="hidden" name="acao" id="acao" value="">
+														  
 															<div class="form-group row">
 																<label class="col-sm-2 col-form-label">Id</label>
 																<div class="col-sm-8">
@@ -87,9 +90,9 @@
 																</div>
 															</div>
                                                            
-                                                           <button class="btn btn-primary waves-effect waves-light" onclick="limparForm();">Novo</button>
+                                                           <button  type="button" class="btn btn-primary waves-effect waves-light" onclick="limparForm();">Novo</button>
                                                            <button class="btn btn-success waves-effect waves-light">Cadastrar</button>
-                                                           <button type="button" class="btn btn-info">Excluir</button>
+                                                           <button type="button" class="btn btn-info" onclick="criarDelete();">Excluir</button>
                                                           
 														</form>
 													</div>
@@ -158,6 +161,13 @@
 	<jsp:include page="scripts.jsp"></jsp:include>
 	
 	<script type="text/javascript">
+	
+	  function criarDelete() {
+		  
+		  document.getElementById("formUser").method = 'get';
+		  document.getElementById("acao").value='deletar';
+		  document.getElementById("formUser").submit();
+	  }
 	
       function limparForm() {
     	  

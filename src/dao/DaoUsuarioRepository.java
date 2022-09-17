@@ -16,7 +16,7 @@ public class DaoUsuarioRepository {
 		connection = SingleConnection.getConnection();
 	}
 
-	/* Metodo para Salvar Usuário no banco */
+	/* Metodo para Salvar Usuario no banco */
 
 	public ModelLogin gravarUsuario(ModelLogin objeto) throws Exception {
 
@@ -82,7 +82,7 @@ public class DaoUsuarioRepository {
 		return modelLogin;
 	}
 
-	/* Não deixa gravar login repitido ou duplicado */
+	/* NÃ£o deixa gravar login repitido ou duplicado */
 
 	public boolean validarLogin(String login) throws Exception {
 
@@ -95,5 +95,16 @@ public class DaoUsuarioRepository {
 
 		return resultado.getBoolean("existe");
 
+	}
+	
+	public void deletaruser(String idUser)throws Exception {
+		
+		String sql = "delete from model_login where id = ?";
+		PreparedStatement deletar = connection.prepareStatement(sql);
+		deletar.setLong(1, Long.parseLong(idUser));
+		deletar.executeUpdate();
+		
+		connection.commit();
+		
 	}
 }
