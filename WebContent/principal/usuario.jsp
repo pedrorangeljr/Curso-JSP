@@ -49,36 +49,44 @@
 													</div>
 													<div class="card-block">
 
-														<form action="<%= request.getContextPath() %>/ServletUsuarioController" method="post" id="formUser">
-														  
-														  <input type="hidden" name="acao" id="acao" value="">
-														  
+														<form
+															action="<%=request.getContextPath()%>/ServletUsuarioController"
+															method="post" id="formUser">
+
+															<input type="hidden" name="acao" id="acao" value="">
+
 															<div class="form-group row">
 																<label class="col-sm-2 col-form-label">Id</label>
 																<div class="col-sm-8">
 																	<input type="text" class="form-control"
-																		readonly="readonly" id="nome" name="id" value="${modelLogin.id }">
+																		readonly="readonly" id="nome" name="id"
+																		value="${modelLogin.id }">
 																</div>
 															</div>
 
 															<div class="form-group row">
 																<label class="col-sm-2 col-form-label">Nome</label>
 																<div class="col-sm-8">
-																	<input type="text" class="form-control" name="nome" id="nome" value="${modelLogin.nome }">
+																	<input type="text" class="form-control" name="nome"
+																		id="nome" value="${modelLogin.nome }">
 																</div>
 															</div>
 
 															<div class="form-group row">
 																<label class="col-sm-2 col-form-label">E-mail</label>
 																<div class="col-sm-8">
-																	<input type="email" class="form-control" name="email" id="email" required="required" value="${modelLogin.email }">
+																	<input type="email" class="form-control" name="email"
+																		id="email" required="required"
+																		value="${modelLogin.email }">
 																</div>
 															</div>
-															
-																<div class="form-group row">
+
+															<div class="form-group row">
 																<label class="col-sm-2 col-form-label">Login</label>
 																<div class="col-sm-8">
-																	<input type="text" class="form-control" name="login" id="login" autocomplete="off" value="${modelLogin.login }">
+																	<input type="text" class="form-control" name="login"
+																		id="login" autocomplete="off"
+																		value="${modelLogin.login }">
 																</div>
 															</div>
 
@@ -86,14 +94,18 @@
 																<label class="col-sm-2 col-form-label">Senha</label>
 																<div class="col-sm-8">
 																	<input type="password" class="form-control"
-																		name="senha" id="senha" autocomplete="off" value="${modelLogin.senha }">
+																		name="senha" id="senha" autocomplete="off"
+																		value="${modelLogin.senha }">
 																</div>
 															</div>
-                                                           
-                                                           <button  type="button" class="btn btn-primary waves-effect waves-light" onclick="limparForm();">Novo</button>
-                                                           <button class="btn btn-success waves-effect waves-light">Cadastrar</button>
-                                                           <button type="button" class="btn btn-info" onclick="criarDelete();">Excluir</button>
-                                                          
+
+															<button type="button"
+																class="btn btn-primary waves-effect waves-light"
+																onclick="limparForm();">Novo</button>
+															<button class="btn btn-success waves-effect waves-light">Cadastrar</button>
+															<button type="button" class="btn btn-info"
+																onclick="criarDelete();">Excluir</button>
+
 														</form>
 													</div>
 												</div>
@@ -112,74 +124,33 @@
 			</div>
 		</div>
 	</div>
-	<!-- Warning Section Starts -->
-	<!-- Older IE warning message -->
-	<!--[if lt IE 10]>
-    <div class="ie-warning">
-        <h1>Warning!!</h1>
-        <p>You are using an outdated version of Internet Explorer, please upgrade <br/>to any of the following web browsers to access this website.</p>
-        <div class="iew-container">
-            <ul class="iew-download">
-                <li>
-                    <a href="http://www.google.com/chrome/">
-                        <img src="assets/images/browser/chrome.png" alt="Chrome">
-                        <div>Chrome</div>
-                    </a>
-                </li>
-                <li>
-                    <a href="https://www.mozilla.org/en-US/firefox/new/">
-                        <img src="assets/images/browser/firefox.png" alt="Firefox">
-                        <div>Firefox</div>
-                    </a>
-                </li>
-                <li>
-                    <a href="http://www.opera.com">
-                        <img src="assets/images/browser/opera.png" alt="Opera">
-                        <div>Opera</div>
-                    </a>
-                </li>
-                <li>
-                    <a href="https://www.apple.com/safari/">
-                        <img src="assets/images/browser/safari.png" alt="Safari">
-                        <div>Safari</div>
-                    </a>
-                </li>
-                <li>
-                    <a href="http://windows.microsoft.com/en-us/internet-explorer/download-ie">
-                        <img src="assets/images/browser/ie.png" alt="">
-                        <div>IE (9 & above)</div>
-                    </a>
-                </li>
-            </ul>
-        </div>
-        <p>Sorry for the inconvenience!</p>
-    </div>
-    <![endif]-->
-	<!-- Warning Section Ends -->
 
 	<!-- Required Jquery -->
 	<jsp:include page="scripts.jsp"></jsp:include>
-	
+
 	<script type="text/javascript">
-	
-	  function criarDelete() {
-		  
-		  document.getElementById("formUser").method = 'get';
-		  document.getElementById("acao").value='deletar';
-		  document.getElementById("formUser").submit();
-	  }
-	
-      function limparForm() {
-    	  
-    	  var elementos = document.getElementById("formUser").elements;
-    	  
-    	  for(p = 0; p < elementos.length; p++) {
-    		  
-    		  elementos[p].value ='';
-    	  }
-      }
-	
-	
+		function criarDelete() {
+			
+			if(confirm('Deseja Realmente excluir os dados')) {
+				
+				document.getElementById("formUser").method = 'get';
+				document.getElementById("acao").value = 'deletar';
+				document.getElementById("formUser").submit();
+				
+			}
+
+			
+		}
+
+		function limparForm() {
+
+			var elementos = document.getElementById("formUser").elements;
+
+			for (p = 0; p < elementos.length; p++) {
+
+				elementos[p].value = '';
+			}
+		}
 	</script>
 </body>
 
