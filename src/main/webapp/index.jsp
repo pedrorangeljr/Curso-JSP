@@ -4,11 +4,43 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>curso jsp</title>
+<title>Login</title>
 </head>
 <body>
 
- <h1>Ola mundo com JSP</h1>
+<center>
+		<h1>Login</h1>
+
+	</center>
+
+	<div align="center">
+
+		<form action="ServletLogin" method="post">
+
+			<table border="1" cellpadding="5">
+
+				<tr>
+					<th>Login:</th>
+					<td><input type="text" name="email" id = "email" size="45" /></td>
+				</tr>
+				
+				<tr>
+					<th>Senha:</th>
+					<td><input type="password" name="senha" id="senha" size="45" /></td>
+				</tr>
+
+				<tr>
+					<td colspan="2" align="center"><input type="submit"
+						value="Entrar" /></td>
+				</tr>
+
+			</table>
+
+		</form>
+
+	</div>
+
+</body>
 
 </body>
 </html>
